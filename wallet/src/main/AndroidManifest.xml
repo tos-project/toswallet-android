@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.toscoin.wallet"
+    android:installLocation="internalOnly" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera2" android:required="false"/>
+
+
+
+    <application
+        android:name="com.toscoin.wallet.WalletApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/toscoin"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.toscoin.wallet.ui.WalletActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.SendActivity"
+            android:label="@string/send_coins_activity_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="bitcoin" />
+                <data android:scheme="litecoin" />
+                <data android:scheme="dogecoin" />
+                <data android:scheme="peercoin" />
+                <data android:scheme="dash" />
+                <data android:scheme="nu" />
+                <data android:scheme="blackcoin" />
+                <data android:scheme="monacoin" />
+                <data android:scheme="reddcoin" />
+                <data android:scheme="rubycoin" />
+                <data android:scheme="digibyte" />
+                <data android:scheme="feathercoin" />
+                <data android:scheme="digitalcoin" />
+                <data android:scheme="cannacoin" />
+                <data android:scheme="digibyte" />
+                <data android:scheme="jumbucks" />
+                <data android:scheme="namecoin" />
+                <data android:scheme="neoscoin" />
+                <data android:scheme="vertcoin" />
+                <data android:scheme="vpncoin" />
+                <data android:scheme="novacoin" />
+                <data android:scheme="canadaecoin" />
+                <data android:scheme="shadowcash" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.IntroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppIntro"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.PasswordConfirmationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoTitleBar"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.SignTransactionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.ScanActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/AppThemeNoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.toscoin.wallet.ui.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.WalletActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.AddCoinsActivity"
+            android:label="@string/title_activity_add_coins"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.WalletActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.TransactionDetailsActivity"
+            android:label="@string/title_activity_transaction_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.ExchangeRatesActivity"
+            android:label="@string/title_activity_exchange_rates"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.WalletActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.PreviousAddressesActivity"
+            android:label="@string/title_activity_previous_addresses"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.WalletActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.ShowSeedActivity"
+            android:label="@string/title_activity_show_seed"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.TradeActivity"
+            android:label="@string/title_activity_trade"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.WalletActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.ExchangeHistoryActivity"
+            android:label="@string/title_activity_exchange_history"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toscoin.wallet.ui.TradeActivity" />
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.TradeStatusActivity"
+            android:label="@string/title_activity_exchange_status"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.SignVerifyMessageActivity"
+            android:label="@string/title_activity_sign_verify_message"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.toscoin.wallet.ui.AccountDetailsActivity"
+            android:label="@string/title_activity_account_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+        </activity>
+
+        <provider
+            android:name="com.toscoin.wallet.ExchangeRatesProvider"
+            android:authorities="com.toscoin.wallet.exchange_rates"
+            android:exported="false" />
+        <provider
+            android:name="com.toscoin.wallet.AddressBookProvider"
+            android:authorities="com.toscoin.wallet.address_book"
+            android:exported="false" />
+        <provider
+            android:name="com.toscoin.wallet.ExchangeHistoryProvider"
+            android:authorities="com.toscoin.wallet.exchange_history"
+            android:exported="false" />
+
+        <service
+            android:name="com.toscoin.wallet.service.CoinServiceImpl"
+            android:exported="false" />
+    </application>
+
+</manifest>
